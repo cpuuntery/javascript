@@ -1,0 +1,3 @@
+let download_all_req = document.querySelectorAll("i[title='Download Rule']")
+for ( let i=0; i<download_all_req.length; i++)
+{setTimeout(function(){download_all_req[i].click()}, i * 500)}

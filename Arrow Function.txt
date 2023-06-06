@@ -1,0 +1,11 @@
+For the arrow function to process anything. You first need to assign the input to a variable, after that you can do whatever you want to the variable and get the result returned by the arrow function.
+
+Some examples
+
+document.querySelectorAll("div.box span a").forEach(x => output += x.textContent + '\n');
+
+document.querySelectorAll("div.box span a").forEach(x => document.querySelector("#output").textContent += x.textContent + '\n')
+
+document.querySelectorAll("img").forEach(x => {if(x.height == 16){x.remove()}})
+
+fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits').then(res =>res.json())

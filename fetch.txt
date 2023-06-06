@@ -1,0 +1,15 @@
+The JavaScript fetch() method take a URL in the form of as string and http header if specified
+
+fetch supports multiple methods for different data formats, which include:
+
+response.json: Returns data as a JSON Object.
+response.text: Returns data in raw text.
+response.formData: Returns data as FormData.
+response.blob: Returns data as a Blob Object.
+response.arrayBuffer: Returns data as a Array Buffer Object
+ 
+fetch always return a promise to get data from fetch, you need to use await and then()
+
+await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits').then(response => response.json())
+
+response.json() is use with json and response.blob used with images

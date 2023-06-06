@@ -1,0 +1,37 @@
+I know it is weird. And it is in reverse. But it is the way things are in XPath
+
+preceding in XPath means after
+following in XPath means before
+
+//a[preceding::ol[@class='work index group']]
+
+means to select only an (a) element that is after (ol) element with a class of "work index group"
+
+if you have an XPath like this 
+
+//a[text()='Next →']
+
+you can add it as a second condition by removing the (//element or the *)
+for Example
+
+//a[preceding::ol[@class='work index group']][text()='Next →']
+
+means to select only an (a) element that is after (ol) element with a class of "work index group" and the (a) element must contain "Next →"
+
+you can chain multiple conditions like this
+
+//element[Path condition1][Path condition2][Path condition3]
+
+When you add a condition, all the conditions must be TRUE. To get an html element from XPath
+
+XPath has another string functions other than text()
+for Example
+
+contains()
+
+for more info check
+
+https://gist.github.com/LeCoupa/8c305ec8c713aad07b14
+
+https://www.lambdatest.com/blog/most-exhaustive-xpath-locators-cheat-sheet/
+
