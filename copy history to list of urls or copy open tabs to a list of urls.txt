@@ -1,0 +1,14 @@
+copy chrome history results to clipboard
+
+output = "";
+document.querySelector("#history-app").shadowRoot.querySelector("#history").shadowRoot.querySelector(".history-cards").querySelectorAll("history-item").forEach(x => output += x.shadowRoot.querySelector("#main-container #item-container #title-and-domain a") + '\n');
+copy(output);
+
+
+
+Copy a list of all open tabs to clipboard
+
+output = "";
+document.querySelectorAll("div#tab_host.tab div.tab_item").forEach(x => output += x.getAttribute("data-url") + '\n');
+copy(output);
+
