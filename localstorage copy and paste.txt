@@ -1,0 +1,43 @@
+(function() {
+    // Create an object to hold the localStorage data
+    let localStorageData = {};
+
+    // Iterate through all the keys in localStorage
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        localStorageData[key] = localStorage.getItem(key);
+    }
+
+    // Convert the data to a JSON string
+    let localStorageString = JSON.stringify(localStorageData);
+
+    // Copy the JSON string to the clipboard
+	copy(localStorageString)
+})();
+
+
+
+
+(function() {
+    // Prompt the user to paste the JSON string from the clipboard
+    let localStorageString = prompt('Paste the LocalStorage data here:');
+
+    if (localStorageString) {
+        try {
+            // Parse the JSON string to get the data object
+            let localStorageData = JSON.parse(localStorageString);
+
+            // Iterate through the keys and set the values in localStorage
+            for (let key in localStorageData) {
+                localStorage.setItem(key, localStorageData[key]);
+            }
+
+            console.log('LocalStorage data transferred successfully.');
+        } catch (e) {
+            console.error('Error parsing LocalStorage data: ', e);
+        }
+    } else {
+        console.log('No data pasted.');
+    }
+})();
+
